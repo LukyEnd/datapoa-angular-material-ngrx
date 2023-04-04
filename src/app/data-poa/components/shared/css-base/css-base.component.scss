@@ -1,0 +1,104 @@
+#container-base {
+  width: 100%;
+  padding-top: 75px;
+
+  .header-bus {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .title-bus {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 25px;
+      font-family: "foco", sans-serif;
+    }
+
+    .line-header {
+      width: 60%;
+      height: 1px;
+      border-radius: 30px;
+      border: none;
+    }
+  }
+
+  .container-bus {
+    width: 100%;
+
+    .base-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .div-table {
+        width: 90%;
+
+        .table {
+          width: 100%;
+
+          .btn-rout-bus {
+            border-color: transparent;
+            width: 100%;
+            max-width: 200px;
+            height: 30px;
+            border-radius: 20px;
+            padding-top: 1px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            .mat-icon {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ng-tns-c62-0,
+.ng-tns-c30-0,
+.mat-form-field-infix,
+.ng-tns-c28-0,
+.mat-form-field ::placeholder {
+  color: var(--text-header) !important;
+}
+
+.ng-tns-c81-5,
+.ng-tns-c81-2,
+.mat-option-text,
+.mat-cell,
+.mat-header-cell,
+.mat-form-field-infix,
+.ng-tns-c30-1,
+.mat-select-trigger {
+  color: var(--text-color) !important;
+}
+
+.search {
+  color: var(--text-color) !important;
+  position: absolute;
+  top: 0;
+}
+
+.mat-header-cell:first-child,
+.mat-cell:first-child,
+.mat-header-cell:nth-child(2),
+.mat-cell:nth-child(2),
+.mat-header-cell:nth-child(3),
+.mat-cell:nth-child(3),
+.mat-header-cell:nth-child(4),
+.mat-cell:nth-child(4) {
+  border-left: 0px;
+  border-bottom: 1px solid var(--line-table);
+}

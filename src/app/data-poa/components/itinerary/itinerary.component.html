@@ -1,0 +1,21 @@
+<div id="container-base">
+  <div *ngIf="busItineraryError">
+    <app-error-api [busLineError]="busItineraryError"></app-error-api>
+  </div>
+  <div class="base-itinerary">
+    <div class="base-container-map">
+      <div class="header-title-maps">
+        <p class="title-map">Mapa</p>
+        <div class="itinerary-text">
+          <p title="Itinerário de/da {{ nameItinerary | titlecase }}">
+            Itinerário de/da "{{ nameItinerary | titlecase }}"
+          </p>
+        </div>
+      </div>
+      <hr class="line-header" />
+      <div class="div-map">
+        <div id="maps"></div>
+      </div>
+    </div>
+  </div>
+</div>

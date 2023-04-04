@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+}
+
+//Theme
+body.light-theme {
+  --text-color: #222;
+  --bkg-color: #dadfe4;
+  --line-table: rgb(50, 50, 50);
+  --text-header: #44434391;
+  --footer-table: #ced4da;
+  --bkg-color-header: #ced4da;
+  --btn-txt-color: white;
+  --btn-bg-color: rgb(11, 88, 160);
+  --border-color-um: 0 0 0 2px #ced4da;
+  --border-color-dois: 0 0 0 20px rgb(50, 50, 50);
+  --bs-table-color: #fff;
+}
+
+body {
+  --text-color: #eee;
+  --bkg-color: #252222;
+  --line-table: #424242;
+  --text-header: #7e7b7b91;
+  --footer-table: rgb(50, 50, 50);
+  --bkg-color-header: rgb(50, 50, 50);
+  --btn-txt-color: rgb(46, 43, 43);
+  --btn-bg-color: rgb(20, 211, 195);
+  --border-color-um: 0 0 0 2px rgb(50, 50, 50);
+  --border-color-dois: 0 0 0 20px #ced4da;
+  --bs-table-color: #323539;
+}
+
+body {
+  background-color: var(--bkg-color);
+}
+
+p {
+  font-family: Foco, serif;
+  color: var(--text-color);
+}
+
+td,
+th {
+  background-color: var(--bs-table-color) !important;
+}
+
+hr {
+  background-color: var(--btn-bg-color) !important;
+}
+
+button,
+.btn {
+  color: var(--btn-txt-color);
+  background-color: var(--btn-bg-color);
+}
+
+.ng-tns-c35-2 {
+  color: var(--text-color) !important;
+}
+
+.mat-paginator-container,
+.mat-select-panel {
+  color: var(--text-color);
+  background-color: var(--footer-table) !important;
+}
+
+.googleMaps {
+  color: black !important;
+}
+
+#div-header {
+  background-color: var(--bkg-color-header);
+}
+
+#maps {
+  box-shadow: var(--border-color-um), var(--border-color-dois) !important;
+}
+
+.mat-form-field-underline {
+  background-color: var(--text-color) !important;
+}

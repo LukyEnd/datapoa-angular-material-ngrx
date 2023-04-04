@@ -1,0 +1,63 @@
+<div id="container-base">
+  <div class="header-bus">
+    <p class="title-bus">Linha de Lotação</p>
+    <hr class="line-header" />
+  </div>
+  <div class="container-bus">
+    <div *ngIf="miniBusError">
+      <app-error-api [busLineError]="miniBusError"></app-error-api>
+    </div>
+    <div class="base-container" *ngIf="!miniBusError">
+      <div class="div-table">
+        <mat-form-field class="mat-form-field">
+          <mat-label>Pesquisar</mat-label>
+          <input
+            matInput
+            [formControl]="myControl"
+            (keyup)="applyFilter($event)"
+            placeholder="Filtrar"
+          />
+          <mat-icon class="search">search</mat-icon>
+        </mat-form-field>
+        <table
+          mat-table
+          [dataSource]="dataSource"
+          matSort
+          aria-describedby="bus-table"
+          class="table table-striped"
+        >
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+          </ng-container>
+          <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Código</th>
+            <td mat-cell *matCellDef="let element">{{ element.codigo }}</td>
+          </ng-container>
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Nome da Linha
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.nome | titlecase }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="itinerario">
+            <th mat-header-cell *matHeaderCellDef>Itinerário</th>
+            <td mat-cell *matCellDef="let element">
+              <button (click)="setNumberId(element.id)" class="btn-rout-bus">
+                <mat-icon class="mat-icon"> directions_bus</mat-icon> Ver Rotas
+              </button>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+        <mat-paginator
+          [pageSizeOptions]="[5, 10, 20]"
+          showFirstLastButtons
+        ></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>
