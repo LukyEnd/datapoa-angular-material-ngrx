@@ -83,4 +83,4 @@ Ferramentas utilizadas para a criação deste projeto:
 ## ✒️ Autor
 
 Criado por [Lucas Sanches](https://github.com/LukyEnd) 😊
-"# datapoa-angular-ngrx" 
+"#datapoa-angular-ngrx" 
