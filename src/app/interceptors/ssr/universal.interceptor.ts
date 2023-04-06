@@ -11,8 +11,7 @@ import {Observable} from "rxjs";
 
 @Injectable()
 export class UniversalInterceptor implements HttpInterceptor {
-  constructor(@Optional() @Inject(REQUEST) protected request: Request) {
-  }
+  constructor(@Optional() @Inject(REQUEST) protected request: Request) {}
 
   intercept(
     req: HttpRequest<any>,

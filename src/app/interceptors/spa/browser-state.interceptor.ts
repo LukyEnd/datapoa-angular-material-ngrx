@@ -37,7 +37,6 @@ export class BrowserStateInterceptor implements HttpInterceptor {
       });
       return of(response);
     }
-
     return next.handle(req);
   }
 }

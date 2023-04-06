@@ -21,7 +21,6 @@ export const initialState: ItineraryState = {
 
 export const itineraryReducer = createReducer(
   initialState,
-
   on(
     BusItineraryActions.loadBusItinerarysSuccess,
     (state, action): ItineraryState => {

@@ -17,7 +17,7 @@ export class MiniBusEffects {
     private store: Store<AppState>
   ) {}
 
-  MiniBuss$ = createEffect(() => {
+  miniBuss$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(MiniBusLineActions.MiniBuss),
       mergeMap(() =>

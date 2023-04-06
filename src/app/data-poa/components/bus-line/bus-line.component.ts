@@ -82,10 +82,4 @@ export class BusLineComponent implements OnInit, OnDestroy {
       return r;
     });
   }
-
-  // public setNumberId(id: number): void {
-  //   this.router.navigate(['/itinerary', id]).then((r) => {
-  //     return r;
-  //   });
-  // }
 }

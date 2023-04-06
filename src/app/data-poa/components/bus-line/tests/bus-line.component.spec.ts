@@ -8,10 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
 import { Store, StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { reducers } from 'src/app/store/reducers/root.reducers';
-import { AppState } from 'src/app/store/state/app.state';
-import { initialState } from '../../../store/reducers/bus-line.reducer';
-import { BusLineComponent } from './bus-line.component';
+import { reducers } from '../../../../store/reducers/root.reducers';
+import { AppState } from '../../../../store/state/app.state';
+import { initialState } from '../../../../store/reducers/bus-line.reducer';
+import { BusLineComponent } from '../bus-line.component';
 
 describe('Actions/Disparos do BusLineComponent', () => {
   let fixture: ComponentFixture<BusLineComponent>;
