@@ -15,7 +15,6 @@ import {
   getLoader,
 } from '../../../store/selectors/bus-line.selectors';
 import { BusLineDetail } from '../../models/bus-line.model';
-import { RouterId } from '../shared/router-id';
 
 @Component({
   selector: 'app-bus-line',
@@ -25,7 +24,7 @@ import { RouterId } from '../shared/router-id';
     '../shared/css-base/css-base.component.scss',
   ],
 })
-export class BusLineComponent extends RouterId implements OnInit, OnDestroy {
+export class BusLineComponent implements OnInit, OnDestroy {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   public displayedColumns: string[] = ['id', 'codigo', 'nome', 'itinerario'];
@@ -38,7 +37,6 @@ export class BusLineComponent extends RouterId implements OnInit, OnDestroy {
   public subscription: Subscription[] = [];
 
   constructor(public router: Router, private store: Store<AppState>) {
-    super(router);
     this.busLine$ = this.store.select(getBusLineSuccess);
     this.busLineError$ = this.store.select(getBusLineError);
     this.isLoading$ = this.store.select(getLoader);
@@ -77,4 +75,17 @@ export class BusLineComponent extends RouterId implements OnInit, OnDestroy {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  public setNumberId(id: number): void {
+    this.router.navigate(['/itinerary', id]).then((r) => {
+      location.reload();
+      return r;
+    });
+  }
+
+  // public setNumberId(id: number): void {
+  //   this.router.navigate(['/itinerary', id]).then((r) => {
+  //     return r;
+  //   });
+  // }
 }

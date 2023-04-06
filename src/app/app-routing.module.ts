@@ -1,21 +1,37 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BusLineComponent } from './data-poa/components/bus-line/bus-line.component';
-import { MiniBusComponent } from './data-poa/components/mini-bus/mini-bus.component';
-import { ItineraryComponent } from './data-poa/components/itinerary/itinerary.component';
-import { ErrorUrlComponent } from './data-poa/components/shared/errors/error-url/error-url.component';
 
 const routes: Routes = [
-  { path: 'bus', component: BusLineComponent },
-  { path: 'itinerary/:id', component: ItineraryComponent },
-  { path: 'minibus', component: MiniBusComponent },
-  { path: '**', component: ErrorUrlComponent },
+  { path: '', redirectTo: 'bus', pathMatch: 'full' },
+  {
+    path: 'bus',
+    loadChildren: () =>
+      import('./data-poa/components/bus-line/bus-line.module').then(
+        (m) => m.BusLineModule
+      ),
+  },
+  {
+    path: 'itinerary/:id',
+    loadChildren: () =>
+      import('./data-poa/components/itinerary/itinerary.module').then(
+        (m) => m.ItineraryModule
+      ),
+  },
+  {
+    path: 'minibus',
+    loadChildren: () =>
+      import('./data-poa/components/mini-bus/mini-bus.module').then(
+        (m) => m.MiniBusModule
+      ),
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabledBlocking',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

@@ -8,11 +8,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './data-poa/components/shared/header/header.component';
-import { SharedModule } from './data-poa/components/shared/shared.module';
 import { BusItineraryEffects } from './store/effects/bus-itinerary.effects';
 import { BusLineEffects } from './store/effects/bus-line.effects';
 import { MiniBusEffects } from './store/effects/mini-bus.effects';
 import { reducers } from './store/reducers/root.reducers';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -20,8 +20,8 @@ import { reducers } from './store/reducers/root.reducers';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     HttpClientModule,
+    AppRoutingModule,
     StoreModule,
-    SharedModule,
     EffectsModule.forRoot([
       BusLineEffects,
       MiniBusEffects,
