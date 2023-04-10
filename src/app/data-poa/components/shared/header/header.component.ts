@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   public routerNavigation(vehicle: string) {
     if (vehicle == 'bus') {
-      this.router.navigate(['/bus']);
-    } else this.router.navigate(['/minibus']);
+      this.router.navigate(['/bus']).then((r) => r);
+    } else this.router.navigate(['/minibus']).then((r) => r);
   }
 }

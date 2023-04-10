@@ -13,7 +13,7 @@ export class ErrorApiComponent {
 
   public pageError(routerReturn: string): void {
     if (routerReturn == 'bus') {
-      this.router.navigate(['/bus']);
-    } else this.router.navigate(['/minibus']);
+      this.router.navigate(['/bus']).then((r) => r);
+    } else this.router.navigate(['/minibus']).then(r => r);
   }
 }

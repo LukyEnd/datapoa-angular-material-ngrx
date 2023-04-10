@@ -15,7 +15,6 @@ import {
   getMiniBusSuccess,
 } from '../../../store/selectors/mini-bus.selectors';
 import { BusLineDetail } from '../../models/bus-line.model';
-import { RouterId } from '../shared/router-id';
 
 @Component({
   selector: 'app-mini-bus',
@@ -25,7 +24,7 @@ import { RouterId } from '../shared/router-id';
     '../shared/css-base/css-base.component.scss',
   ],
 })
-export class MiniBusComponent extends RouterId implements OnInit, OnDestroy {
+export class MiniBusComponent implements OnInit, OnDestroy {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   public displayedColumns: string[] = ['id', 'codigo', 'nome', 'itinerario'];
@@ -38,7 +37,6 @@ export class MiniBusComponent extends RouterId implements OnInit, OnDestroy {
   public subscription: Subscription[] = [];
 
   constructor(public router: Router, private store: Store<AppState>) {
-    super(router);
     this.miniBusLine$ = this.store.select(getMiniBusSuccess);
     this.miniBusError$ = this.store.select(getMiniBusError);
     this.isLoading$ = this.store.select(getLoader);
@@ -76,5 +74,12 @@ export class MiniBusComponent extends RouterId implements OnInit, OnDestroy {
   public applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  public setNumberId(id: number): void {
+    this.router.navigate(['/itinerary', id]).then((r) => {
+      location.reload();
+      return r;
+    });
   }
 }

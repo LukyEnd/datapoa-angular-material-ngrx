@@ -13,7 +13,6 @@ export const initialState: ChangeThemeState = {
 
 export const changeThemeStateReducer = createReducer(
   initialState,
-
   on(ChangeThemeActions.loadChangeThemes, (state, action): ChangeThemeState => {
     return {
       ...state,

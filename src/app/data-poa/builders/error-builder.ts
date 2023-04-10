@@ -1,8 +1,8 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import {HttpErrorResponse} from '@angular/common/http';
 
 export class ErrorBuilder {
   static genericError(error: HttpErrorResponse): string {
-    var message =
+    const message =
       'Desculpe o Transtorno!! Retorne para uma das alternativas Abaixo.';
     switch (error.status) {
       case 400:
@@ -21,8 +21,7 @@ export class ErrorBuilder {
         let error500 = `Falha interna do servidor. Mensagem do Erro: ${error.message}.`;
         return error500 + message;
       default:
-        let errorDetail = `Erro Desconhecido. Mensagem do Erro: ${error.message}.`;
-        return errorDetail;
+        return `Erro Desconhecido. Mensagem do Erro: ${error.message}.`;
     }
   }
 }

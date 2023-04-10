@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MiniBusComponent } from './mini-bus.component';
+import { MiniBusComponent } from '../mini-bus.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -8,9 +8,9 @@ import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Store, StoreModule } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { initialState } from 'src/app/store/reducers/change-theme.reducer';
-import { reducers } from 'src/app/store/reducers/root.reducers';
-import { AppState } from 'src/app/store/state/app.state';
+import { initialState } from '../../../../store/reducers/change-theme.reducer';
+import { reducers } from '../../../../store/reducers/root.reducers';
+import { AppState } from '../../../../store/state/app.state';
 import { Router } from '@angular/router';
 
 describe('MiniBusComponent', () => {

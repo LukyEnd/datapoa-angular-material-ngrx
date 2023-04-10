@@ -44,7 +44,7 @@ export function app(): express.Express {
 function run(): void {
   const port = process.env['PORT'] || 4000;
   const server = app();
-  const expressServer = http.createServer(server); //forçar o uso de HTTP
+  const expressServer = http.createServer(server);
 
   expressServer.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
